@@ -33,6 +33,13 @@ models:
   dbt_learn_repos:
     staging:
       +materialized: view
+      +database: silver_db
+      +schema: staging
+
+    cleansing:
+     +database: silver_db
+     +schema: cleansing
+     +materialized: view
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
